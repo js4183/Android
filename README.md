@@ -358,7 +358,15 @@ xml에 있는 view를 컨트롤하기 위해서는 id값이 필요 class에서�
     <summary>📚 11/28</summary>
   
 ## 안드로이드 4대 컴포넌트
-  
+- Activity 화면을 구성
+- Service (Background에서 동작) Activity에서 화면만 뺀거
+- BR(Broadcast Receiver) 외부 신호 감지
+- CP(Content Provider) 정보를 전송하고자 할 때 정보를 넘겨줌
+
+### 4대 구성요소간 정보를 매개하는 -> Intent
+명시적 explicit
+묵시적 implicit
+
 Intent - 중간 다리 역할
 인텐트 : 메세지 객체
 
@@ -502,7 +510,9 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
 3. 해당 색상코드를 버튼을 눌렀을 때 intent에 실어서 보내주자(SecondActivity로)
 4. SecondActivity에서 intent에 붙어있는 데이터를 떼서 사용 (setBackground에 사용)
 5. btnPre를 누르면 이전페이지로 돌아간다
-    
+
+![image](https://user-images.githubusercontent.com/112377313/204199539-d493c8d3-ea2b-4959-9187-f58f883714aa.png)
+
 * Stack처럼 쌓임. -> finish메서드를 이용해 빼버려야함 (생명주기)    
     
 ![image](https://user-images.githubusercontent.com/112377313/204172256-727505c0-af7e-4b73-9eb6-5da58115780f.png)
@@ -510,6 +520,7 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
   메모리 삭제 ?
   
 * xml -> b 화면 1개 or 2개 전환
+* Ctrl + Alt + L 정렬 단축키
   
   
   
