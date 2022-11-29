@@ -363,15 +363,20 @@ xml에 있는 view를 컨트롤하기 위해서는 id값이 필요 class에서�
 - BR(Broadcast Receiver) 외부 신호 감지
 - CP(Content Provider) 정보를 전송하고자 할 때 정보를 넘겨줌
 
-### 4대 구성요소간 정보를 매개하는 -> Intent
-명시적 explicit
-묵시적 implicit
 
-Intent - 중간 다리 역할
+
+### 4대 구성요소간 정보를 매개하는 -> Intent
+Intent - 중간 다리 역할 4대 구성요소 중간다리역할을 하는 메세지 객체
 인텐트 : 메세지 객체
 
-
-
+명시적 explicit
+- 액션(VIEW, WEB_SEARCH, CALL, DIAL, ...)
+액션+데이터
+- 액션(카메라, 웹서치, 문자메세지)
+묵시적 implicit
+- 구성요소들끼리 데이터를 주고받거나, 이동할 때 사용하는 인텐트
+1) startActivity(인텐트) ---> 단방향 (데이터를 주거나 or 받는다)
+2) startActivityForResult(인텐트, requestCode) ---> 양방향 (데이터를 주고 받음)
   
 ![image](https://user-images.githubusercontent.com/112377313/204172469-3d682b3f-a918-4751-bc18-a8e5efcff7fa.png)
   
@@ -525,3 +530,21 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
   
   
   </details>
+  
+<details>
+    <summary>📚 11/29</summary>
+    
+    <details>
+        <summary>📚 Ex20221129</summary>
+        
+        ### Ex01
+        1. MainActivity에서 버튼을 누르면 Sub한테 이동(요청)
+        StartActivityForResult(인텐트, requestCode)
+        2. Sub에 버튼을 눌렀을 때 EditText에 담겨있는 값을 들고
+           Main으로 온다~!
+        3. Main에서 값을 받아줘야한다
+        (OnActivityResult() 오버라이딩 -> intent에서 데이터를 꺼내주는 메서드)
+        
+    </details>
+    
+</details>
