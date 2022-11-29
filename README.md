@@ -534,7 +534,8 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
 <details>
     <summary>📚 11/29</summary>
     
-    <details>
+    
+<details>
         <summary>📚 Ex20221129</summary>
         
         ### Ex01
@@ -545,6 +546,28 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
         3. Main에서 값을 받아줘야한다
         (OnActivityResult() 오버라이딩 -> intent에서 데이터를 꺼내주는 메서드)
         
-    </details>
+</details>
+    
+    
+<details>
+        <summary>📚 14:10~ </summary>
+        
+        ![image](https://user-images.githubusercontent.com/112377313/204446629-37a7defe-208c-404a-b817-fa32f72f921d.png)
+
+        ![image](https://user-images.githubusercontent.com/112377313/204447508-01c7bd41-fcaf-4db5-87b2-1a60e90cd00d.png)
+        * name 소문자, _ 만 입력 **
+    
+        ![image](https://user-images.githubusercontent.com/112377313/204460015-3c4a11f5-c321-43c7-892f-22a6c052409d.png)
+
+        ### ListView
+        
+        
+        ### Spinner
+        
+        
+        ### GridView
+        
+</details>
+    
     
 </details>
