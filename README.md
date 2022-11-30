@@ -571,3 +571,22 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
     
     
 </details>
+
+<details>
+        <summary>📚 20221130 </summary>
+        
+        1. Adapter View 사용해서 전화번호부 만들기
+        2. SubActivity로 부터 받아온 값으로 Main에 ListView에 추가
+        
+        ![image](https://user-images.githubusercontent.com/112377313/204676126-3741269c-beb2-40b5-8dce-fb335c8792cb.png)
+        
+        이미지 세팅
+        drawable 5개 이미지 저장
+        
+        ![image](https://user-images.githubusercontent.com/112377313/204678017-daa8b8fd-a331-46f6-a4ba-5b8ff13bf42b.png)
+
+        padding -> 
+        
+
+        
+</details>
