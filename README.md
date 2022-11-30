@@ -573,7 +573,7 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
 </details>
 
 <details>
-        <summary>📚 1130 </summary>
+        <summary>📚 11/30 </summary>
         
         1. Adapter View 사용해서 전화번호부 만들기
         2. SubActivity로 부터 받아온 값으로 Main에 ListView에 추가
