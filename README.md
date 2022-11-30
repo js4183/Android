@@ -573,7 +573,7 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
 </details>
 
 <details>
-        <summary>📚 20221130 </summary>
+        <summary>📚 1130 </summary>
         
         1. Adapter View 사용해서 전화번호부 만들기
         2. SubActivity로 부터 받아온 값으로 Main에 ListView에 추가
@@ -585,8 +585,24 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
         
         ![image](https://user-images.githubusercontent.com/112377313/204678017-daa8b8fd-a331-46f6-a4ba-5b8ff13bf42b.png)
 
-        padding -> 
+        padding -> 16dp
         
+        - Adapter View
+        - ListView
+        안쪽에 사용하고 있는 Adapter에서 findViewById()가 굉장히 많이 호출된다.
+        안드로이드에서 메모리 리소스를 많이 잡아먹는 함수 중 하나이다!
+        개발 -> 유지보수!!
+        
+        - RecyclerView
+        AdapterView 만드는 6단계
+        1) Container 결정
+        2) Template 결정
+        3) Item 결정
+        4) Adapter 결정
+        5) Container에 Adapter 부착
+        6) Event 처리
+        
+        minSdk 버전(레벨)의미 올리는 것만 가능
 
         
 </details>
