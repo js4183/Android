@@ -687,3 +687,54 @@ RecyclerView
 
 url=https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20221130
 </details>
+
+<details>
+        <summary>📚 12/02 </summary>
+       
+![image](https://user-images.githubusercontent.com/112377313/205186994-b424c3d3-f046-4459-8617-36e94ba0e6a0.png)
+
+☆★API key 값은 복사해서 붙혀넣기!!!
+
+rank -> tvRank
+
+Fragment -> (분할, 나누기) 부분화면
+
+레이아웃&액티비티 중첩 -> 코드의 복잡성과 액티비티의 생명주기
+인텐트를 이용해 화면이동 -> 프로그먼트 매니저가 화면 관리 ( 액티비티 화면위에서 동작함* )
+
+특징
+- 화면 분할
+- 화면의 재사용성
+- 액티비티와 같이 레이아웃, 동작처리, 생명주기를 가진 독립적인 모듈
+- 액티비티 내 추가/삭제/제거 가능
+
+ContraintLayout
+순서
+1. 아래의 4개의 탭
+2. 뭘 클릭했는지 구분
+
+FrameLayout에 Fragment를 갈아끼워준다
+
+
+### 안드로이드에서 비휘발성 데이터 만들기
+- 서버에 저장
+- SQLite (내장메모리)
+- FireBase : 회원가입, 로그인, .. 세부적기능들이 이미 다 구현되어있음
+- SharedPreference
+    - Sqlite보다 가벼움
+    - Fragment간에 데이터 전송
+    - 어플리케이션 첫 실행 감지 할 때
+    - 
+
+    <details>
+        <summary> 코드 토글 Code</summary>
+    
+```
+
+```
+</details>
+
+
+
+
+</details>
