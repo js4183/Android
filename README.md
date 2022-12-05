@@ -727,6 +727,81 @@ FrameLayout에 Fragment를 갈아끼워준다
     - 
 
     <details>
+        <summary>📚 12/05 </summary>
+    
+Fragment (분할) : 부분화면
+kt + xml ---> Activity 위에 부분화면
+Acitivity간에 데이터 전송/이동 intent
+intent ---> AndroidManager
+
+Fragment간에 데이터 전송/이동 SharedPreference, intent
+------> FragmentManager가 관리함
+SharedPreference ;  Fragment간에 데이터 전송/유지
+(어플리케이션 첫 실행 감지/자동 로그인 할때 사용)
+
+*** WebView ***
+1. Layout에 WebView위치를 설정
+2. 주소 준비
+3. 설정 변경 val ws = wv.settings
+(JavaScript를 사용 가능하도록 허용)
+4. WebView에 Client 설정
+5. WebView에 준비해놓은 주소 적용
+
+Firebase
+- Authentication
+- Realtime Database
+- Storage
+- Firestore Database, Hosting, Function, ML (높은 확장성을 가짐)
+
+단점
+- 서버 승답 속도의 저하 (서버가 해외에 위치)
+- Realtime DB쿼리문 빈약 (Like, OR 문 사용이 불가능)
+
+실습 순서
+- 레이아웃 꾸미기 및 회원가입 로직 구현
+- 메인화면 레이아웃 꾸미기
+- 팁페이지 만들기
+- 북마크 및 게시판 구현
+
+SplashAcitivity : 어플리케이션을 실행시켰을 때 3초 간 보일 화면 만들기 (Thread 사용)
+
+Process(프로세스) : 컴퓨터에서 연속적으로 실행되고 있는 프로그램
+Thread(스레드) : 스레드란 동시 작업을 위한 하나의 실행 단위
+Handler : 다른 객체가 보낸 메세지를 수신, 처리하는 객체
+arg1, arg2 : int
+obj : Object **
+
+### 12/5 12:00 ~ 12:50 Firebase 프로젝트 만들기!!
+프로젝트 만들기 -> 프로젝트 이름 > 대한민국 선택 -> 안드로이드 클릭 > main 패키지 복사 붙혀넣기 앱 등록 > 안드로이드에 Json 파일 추가 > Project app 드래그앤드롭 > 프로젝트 gradle id 'com.google.gms.google-services' version '4.3.13' apply false sync now BUILD SUCCESSFUL 확인하기 > 모듈 gradle id 'com.google.gms.google.services' 추가 > dependencies 추가 sync now SUCCESSFUL 확인! * 적용이 안될 경우 app Json 파일 삭제 후 다시 추가해보기 * > Authentication 시작하기 > 이메일/비밀번호 Enabled, (add new provider), anonymous Enabled, Pw 8자리 **
+<
+//firebase
+implementation platform('com.google.firebase:firebase-bom:30.3.1')
+implementation 'com.google.firebase:firebase-database:20.0.5'
+implementation 'com.google.firebase:firebase-analytics'
+implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.2'
+// firebase auth
+implementation 'com.google.firebase:firebase-auth-ktx:21.0.8'
+
+// firebase의 database에 접근하려면
+implementation 'com.google.firebase:firebase-database-ktx:20.0.6'
+
+// firebase의 storage사용
+implementation 'com.google.firebase:firebase-storage-ktx:20.0.2'
+>
+
+Thread 
+컴퓨터의 작업의 단위 : 프로세스
+LOL, EXCEL, 한글 -> 소프트웨어
+한글 -> 인쇄, 맞춤법 검사, 글자 키우기, 타이핑 하기
+ex) 글자 타이핑 동시에 인쇄 가능 인쇄 쓰레드, 타이핑 쓰레드
+Thread 동시에 진행되는 것 처럼 보임
+인쇄 -> 타이핑
+인쇄 4ms 타이핑 milli = 10 ^ -3 
+
+    
+</details>
+
+<details>
         <summary> 코드 토글 Code</summary>
     
 ```
