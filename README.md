@@ -538,13 +538,11 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
 <details>
         <summary>📚 Ex20221129</summary>
         
-        ### Ex01
-        1. MainActivity에서 버튼을 누르면 Sub한테 이동(요청)
-        StartActivityForResult(인텐트, requestCode)
-        2. Sub에 버튼을 눌렀을 때 EditText에 담겨있는 값을 들고
-           Main으로 온다~!
-        3. Main에서 값을 받아줘야한다
-        (OnActivityResult() 오버라이딩 -> intent에서 데이터를 꺼내주는 메서드)
+### Ex01
+1. MainActivity에서 버튼을 누르면 Sub한테 이동(요청) StartActivityForResult(인텐트, requestCode)
+2. Sub에 버튼을 눌렀을 때 EditText에 담겨있는 값을 들고 Main으로 온다~!
+3. Main에서 값을 받아줘야한다
+(OnActivityResult() 오버라이딩 -> intent에서 데이터를 꺼내주는 메서드)
         
 </details>
     
@@ -552,20 +550,18 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
 <details>
         <summary>📚 14:10~ </summary>
         
-        ![image](https://user-images.githubusercontent.com/112377313/204446629-37a7defe-208c-404a-b817-fa32f72f921d.png)
+![image](https://user-images.githubusercontent.com/112377313/204446629-37a7defe-208c-404a-b817-fa32f72f921d.png)
 
-        ![image](https://user-images.githubusercontent.com/112377313/204447508-01c7bd41-fcaf-4db5-87b2-1a60e90cd00d.png)
-        * name 소문자, _ 만 입력 **
+![image](https://user-images.githubusercontent.com/112377313/204447508-01c7bd41-fcaf-4db5-87b2-1a60e90cd00d.png)
+* name 소문자, _ 만 입력 **
     
-        ![image](https://user-images.githubusercontent.com/112377313/204460015-3c4a11f5-c321-43c7-892f-22a6c052409d.png)
+![image](https://user-images.githubusercontent.com/112377313/204460015-3c4a11f5-c321-43c7-892f-22a6c052409d.png)
 
-        ### ListView
+### ListView
         
+### Spinner
         
-        ### Spinner
-        
-        
-        ### GridView
+### GridView
         
 </details>
     
@@ -575,34 +571,34 @@ Mainfest.xml 에 <uses-permission android:name="android.permission.CALL_PHONE"/>
 <details>
         <summary>📚 11/30 </summary>
         
-        1. Adapter View 사용해서 전화번호부 만들기
-        2. SubActivity로 부터 받아온 값으로 Main에 ListView에 추가
+1. Adapter View 사용해서 전화번호부 만들기
+2. SubActivity로 부터 받아온 값으로 Main에 ListView에 추가
         
-        ![image](https://user-images.githubusercontent.com/112377313/204676126-3741269c-beb2-40b5-8dce-fb335c8792cb.png)
+![image](https://user-images.githubusercontent.com/112377313/204676126-3741269c-beb2-40b5-8dce-fb335c8792cb.png)
         
-        이미지 세팅
-        drawable 5개 이미지 저장
+이미지 세팅
+drawable 5개 이미지 저장
         
-        ![image](https://user-images.githubusercontent.com/112377313/204678017-daa8b8fd-a331-46f6-a4ba-5b8ff13bf42b.png)
+![image](https://user-images.githubusercontent.com/112377313/204678017-daa8b8fd-a331-46f6-a4ba-5b8ff13bf42b.png)
 
-        padding -> 16dp
+padding -> 16dp
         
-        - Adapter View
-        - ListView
-        안쪽에 사용하고 있는 Adapter에서 findViewById()가 굉장히 많이 호출된다.
-        안드로이드에서 메모리 리소스를 많이 잡아먹는 함수 중 하나이다!
-        개발 -> 유지보수!!
+- Adapter View
+- ListView
+안쪽에 사용하고 있는 Adapter에서 findViewById()가 굉장히 많이 호출된다.
+안드로이드에서 메모리 리소스를 많이 잡아먹는 함수 중 하나이다!
+개발 -> 유지보수!!
         
-        - RecyclerView
-        AdapterView 만드는 6단계
-        1) Container 결정
-        2) Template 결정
-        3) Item 결정
-        4) Adapter 결정
-        5) Container에 Adapter 부착
-        6) Event 처리
-        
-        minSdk 버전(레벨)의미 올리는 것만 가능
+- RecyclerView
+AdapterView 만드는 6단계
+1) Container 결정
+2) Template 결정
+3) Item 결정
+4) Adapter 결정
+5) Container에 Adapter 부착
+6) Event 처리
+
+minSdk 버전(레벨)의미 올리는 것만 가능
 
         
 </details>
@@ -895,38 +891,34 @@ class GameActivity : AppCompatActivity() {
 
         Log.d("랜덤", numbers.toString())
     }
-}
-        
-        
+}  
 ```
 </details>
-
-    구글맵 사용하기
-    "https://developers.google.com/maps/documentation/android-sdk/start?hl=ko"
-    API Key Manifest에 추가 XXXXX *보이기때문
+구글맵 사용하기
+https://developers.google.com/maps/documentation/android-sdk/start?hl=ko
+API Key Manifest에 추가 XXXXX *보이기때문
     
     
-    AIzaSyBhY9buVEiMr-vjAJjE5xknQwFVwF8Yy1s
+AIzaSyBhY9buVEiMr-vjAJjE5xknQwFVwF8Yy1s
     
-    ![image](https://user-images.githubusercontent.com/112377313/205807608-a6929d33-2b4f-48e3-a040-49ae54ad62fd.png)
+![image](https://user-images.githubusercontent.com/112377313/205807608-a6929d33-2b4f-48e3-a040-49ae54ad62fd.png)
     
-    ![image](https://user-images.githubusercontent.com/112377313/205826634-35066d09-e07a-4007-9cb9-41465155c88f.png)
+![image](https://user-images.githubusercontent.com/112377313/205826634-35066d09-e07a-4007-9cb9-41465155c88f.png)
 
-    ![image](https://user-images.githubusercontent.com/112377313/205827256-5bb90054-22de-4032-bdb8-850b1101df12.png)
+![image](https://user-images.githubusercontent.com/112377313/205827256-5bb90054-22de-4032-bdb8-850b1101df12.png)
 
-    ![image](https://user-images.githubusercontent.com/112377313/205849110-585c86e0-8cc1-4f4d-9ac1-42408072bbeb.png)
+![image](https://user-images.githubusercontent.com/112377313/205849110-585c86e0-8cc1-4f4d-9ac1-42408072bbeb.png)
 
-    ![image](https://user-images.githubusercontent.com/112377313/205853376-ec041daf-4233-4023-8e04-6f7e728de119.png)
+![image](https://user-images.githubusercontent.com/112377313/205853376-ec041daf-4233-4023-8e04-6f7e728de119.png)
     
     
     
 ### 실행안될때 참고*
 
-    ![image](https://user-images.githubusercontent.com/112377313/205853895-3c6098df-df03-4758-b469-964787bdaa80.png)
+![image](https://user-images.githubusercontent.com/112377313/205853895-3c6098df-df03-4758-b469-964787bdaa80.png)
 
-    ![image](https://user-images.githubusercontent.com/112377313/205853940-7ae85cfd-ffcb-486a-b79c-5be9ceea9219.png)
+![image](https://user-images.githubusercontent.com/112377313/205853940-7ae85cfd-ffcb-486a-b79c-5be9ceea9219.png)
 
-    
 </details>
 
 <details>
