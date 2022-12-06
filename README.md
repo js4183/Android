@@ -725,9 +725,11 @@ FrameLayout에 Fragment를 갈아끼워준다
     - Fragment간에 데이터 전송
     - 어플리케이션 첫 실행 감지 할 때
     - 
+</details>
 
-    <details>
+<details>
         <summary>📚 12/05 </summary>
+    
     
 Fragment (분할) : 부분화면
 kt + xml ---> Activity 위에 부분화면
@@ -798,6 +800,132 @@ Thread 동시에 진행되는 것 처럼 보임
 인쇄 -> 타이핑
 인쇄 4ms 타이핑 milli = 10 ^ -3 
 
+</details>
+
+<details>
+        <summary> 📚 12/06</summary>
+    
+두더지게임, 
+    
+<details>
+        <summary> 1 to 25 Code</summary>
+    
+```
+
+        package com.example.dooo
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import kotlin.random.Random
+import kotlin.random.nextInt
+
+class GameActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_game)
+
+        val btnGame = findViewById<Button>(R.id.btnGame)
+        val numbers = ArrayList<Int>()
+        var cnt = 1 // 현재 눌러야 되는 숫자
+
+        rdSet(numbers, cnt)
+
+
+        val btns = ArrayList<Button>()
+
+        for (i in 1..25) {
+            val resId = resources.getIdentifier("btn$i", "id", packageName)
+            val btn = findViewById<Button>(resId)
+            btns.add(btn)
+            btn.visibility = View.INVISIBLE
+        }
+
+        btnGame.setOnClickListener {
+
+            for (i in 0 until btns.size) {
+                val btn = btns.get(i)
+                btnSet(btn, numbers.get(i))
+                btn.setOnClickListener {
+                    if (btn.text.toString().toInt() == cnt) {
+                        btn.visibility = View.INVISIBLE
+                        cnt++
+
+                        if (cnt % 25 == 1) {
+                            rdSet(numbers, cnt)
+                            for (j in 0 until btns.size) {
+                                val btn = btns.get(j)
+                                btnSet(btn, numbers.get(j))
+                            }
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+
+
+    }
+
+    fun btnSet(btn: Button, value: Int) {
+        btn.setText(value.toString())
+        btn.visibility = View.VISIBLE
+    }
+
+    fun rdSet(numbers: ArrayList<Int>, cnt: Int) {
+        numbers.clear()
+
+        for (i in cnt..cnt + 24) {
+            numbers.add(i)
+        }
+
+        for (i in 0 until 100) {
+            val rdNum1 = Random.nextInt(25) // 0 ~ 25
+            val rdNum2 = Random.nextInt(25) // 0 ~ 25
+
+            // 예) rdNum1 = 3, rdNum2 = 6
+            val temp = numbers.get(rdNum1)
+            numbers[rdNum1] = numbers[rdNum2]
+            numbers[rdNum2] = temp
+        }
+
+        Log.d("랜덤", numbers.toString())
+    }
+}
+        
+        
+```
+</details>
+
+    구글맵 사용하기
+    "https://developers.google.com/maps/documentation/android-sdk/start?hl=ko"
+    API Key Manifest에 추가 XXXXX *보이기때문
+    
+    
+    AIzaSyBhY9buVEiMr-vjAJjE5xknQwFVwF8Yy1s
+    
+    ![image](https://user-images.githubusercontent.com/112377313/205807608-a6929d33-2b4f-48e3-a040-49ae54ad62fd.png)
+    
+    ![image](https://user-images.githubusercontent.com/112377313/205826634-35066d09-e07a-4007-9cb9-41465155c88f.png)
+
+    ![image](https://user-images.githubusercontent.com/112377313/205827256-5bb90054-22de-4032-bdb8-850b1101df12.png)
+
+    ![image](https://user-images.githubusercontent.com/112377313/205849110-585c86e0-8cc1-4f4d-9ac1-42408072bbeb.png)
+
+    ![image](https://user-images.githubusercontent.com/112377313/205853376-ec041daf-4233-4023-8e04-6f7e728de119.png)
+    
+    
+    
+### 실행안될때 참고*
+
+    ![image](https://user-images.githubusercontent.com/112377313/205853895-3c6098df-df03-4758-b469-964787bdaa80.png)
+
+    ![image](https://user-images.githubusercontent.com/112377313/205853940-7ae85cfd-ffcb-486a-b79c-5be9ceea9219.png)
+
     
 </details>
 
@@ -808,7 +936,6 @@ Thread 동시에 진행되는 것 처럼 보임
 
 ```
 </details>
-
 
 
 
