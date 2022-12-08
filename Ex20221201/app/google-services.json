@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "128551678036",
+    "firebase_url": "https://utility-ridge-370803-default-rtdb.firebaseio.com",
+    "project_id": "utility-ridge-370803",
+    "storage_bucket": "utility-ridge-370803.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128551678036:android:88d886bb0c6c9cb4157dc1",
+        "android_client_info": {
+          "package_name": "com.example.ex20221201"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128551678036-5ume21lbop56gal2p2f18ook8ijtm7qr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3xXdErsyfHHZsQ9yDziupk2kQITOkrz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128551678036-5ume21lbop56gal2p2f18ook8ijtm7qr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
