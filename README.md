@@ -969,6 +969,7 @@ getContentData할때 Bookmarklist에 있는 데이터만 가져와서 data에 ad
 그친구를 adapter로 보내줘서 setting
 4. adapter 적용
 
+https://devris.tistory.com/14
     
 </details>
     
