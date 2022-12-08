@@ -922,6 +922,57 @@ AIzaSyBhY9buVEiMr-vjAJjE5xknQwFVwF8Yy1s
 </details>
 
 <details>
+        <summary> 📚 12/07</summary>
+
+![image](https://user-images.githubusercontent.com/112377313/206062883-7d6a2c83-922f-4bb6-a59f-fe19b991fd47.png)
+![image](https://user-images.githubusercontent.com/112377313/206062902-e803b828-07b3-46d4-81b2-8293fe58cf12.png)
+![image](https://user-images.githubusercontent.com/112377313/206063051-5c6d4f3b-9a55-4d7d-9452-8aa4c12ee04c.png)
+![image](https://user-images.githubusercontent.com/112377313/206065280-b6b750a8-c63c-45bb-86bb-3192b1757612.png)
+![image](https://user-images.githubusercontent.com/112377313/206065642-6293d1a1-9dc5-4923-865d-1c88bf1a0b74.png)
+
+### Glide
+- 안드로이드에서 이미지를 빠르고 효율적으로 불러오는 라이브러리
+
+![image](https://user-images.githubusercontent.com/112377313/206070719-beb603ba-eeeb-4373-b3cc-2f9529d74131.png)
+![image](https://user-images.githubusercontent.com/112377313/206070833-cce2098e-03d8-4515-bcf8-22445dc5083c.png)
+![image](https://user-images.githubusercontent.com/112377313/206071013-97538076-3a48-47e9-aec5-05aba33d5280.png)
+![image](https://user-images.githubusercontent.com/112377313/206079935-e4ca8797-751b-4671-a2cf-1283952cd25f.png)
+![image](https://user-images.githubusercontent.com/112377313/206095608-4299461e-5d6e-470e-8a68-3483bfd988c4.png)
+![image](https://user-images.githubusercontent.com/112377313/206095849-c160abb3-f705-4a04-8be1-285db710dc7b.png)
+![image](https://user-images.githubusercontent.com/112377313/206095865-3fa4f2ea-36f0-4b24-9c4f-b8d8aa04d0b3.png)
+![image](https://user-images.githubusercontent.com/112377313/206098076-15c779f4-5e4c-45f1-bffb-aed84d778114.png)
+
+IllegalArgumentException - 예외처리 
+
+구글 파이어베이스 연동 변경 첫번째게시글 참고 (삭제)
+![image](https://user-images.githubusercontent.com/112377313/206114582-edb173dd-9b8a-4a0c-914e-133afe3eafba.png)
+![image](https://user-images.githubusercontent.com/112377313/206114891-51adccca-a5cd-4714-b431-159b174f2865.png)
+
+
+
+
+
+
+</details>
+    
+<details>
+        <summary> 📚 12/08</summary>
+    
+채팅구현
+ListVO가 들어가는 data ---> 전체보기에 있는 데이터가 다 들어가있음
+getContentData할때 Bookmarklist에 있는 데이터만 가져와서 data에 add되야함
+1. GetBookmarkData가 실행되서 내가 찍은 북마크 게시물의 uid 값을 가져온다
+// bookmarkList가 채워져있어야 2번이 진행될 수 있음
+2. getContentData는 안에서 전체 데이터를 가져오는게 아니라
+북마크가찍혀있는 데이터인지 아닌지를 판단한 후에 찍혀있으면 data에 add 해야함
+3. 만약에 북마크를 4개 찍었으면 4개에 대한 ListVO가 data에 추가되어있을 거고
+그친구를 adapter로 보내줘서 setting
+4. adapter 적용
+
+    
+</details>
+    
+<details>
         <summary> 코드 토글 Code</summary>
     
 ```
