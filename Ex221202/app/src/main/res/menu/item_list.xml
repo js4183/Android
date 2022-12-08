@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tab1"
+        android:icon="@android:drawable/btn_dialog"
+        android:title="Home" />
+    <item
+        android:id="@+id/tab2"
+        android:icon="@android:drawable/button_onoff_indicator_on"
+        android:title="Board" />
+    <item
+        android:id="@+id/tab3"
+        android:icon="@android:drawable/ic_delete"
+        android:title="Write" />
+    <item
+        android:id="@+id/tab4"
+        android:icon="?android:attr/fingerprintAuthDrawable"
+        android:title="Settings" />
+</menu>
