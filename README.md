@@ -974,6 +974,206 @@ https://devris.tistory.com/14
 </details>
     
 <details>
+        <summary> 📚 12/09</summary>
+    
+```
+import android.content.Context
+import android.graphics.Color
+import android.util.Log
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.View.OnKeyListener
+import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+
+// 1. 먼저 WordleAdapter의 생성자(context, wordleList) 설정
+// 3. WordleAdapter 가 RecyclerView.Adapter<ViewHolder>를 상속
+class WordleAdapter(var context: Context, var wordleList: ArrayList<WordleVO>, var answer: String) :
+    RecyclerView.Adapter<WordleAdapter.ViewHolder>() {
+// 4. 구현되지 않은 member 구현
+
+    // 2. inner class ViewHolder 구현
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        // 5. ViewHolder field 구성 (etWordle1 ~ etWordle5)
+        val etWordle1: EditText
+        val etWordle2: EditText
+        val etWordle3: EditText
+        val etWordle4: EditText
+        val etWordle5: EditText
+
+        init {
+            // 6. init{}, findViewById()를 통해 etWordle1 ~ etWordle5 초기화
+            etWordle1 = itemView.findViewById(R.id.etWordle1)
+            etWordle2 = itemView.findViewById(R.id.etWordle2)
+            etWordle3 = itemView.findViewById(R.id.etWordle3)
+            etWordle4 = itemView.findViewById(R.id.etWordle4)
+            etWordle5 = itemView.findViewById(R.id.etWordle5)
+
+            val etList = ArrayList<EditText>()
+            etList.add(etWordle1)
+            etList.add(etWordle2)
+            etList.add(etWordle3)
+            etList.add(etWordle4)
+            etList.add(etWordle5)
+
+
+
+            for (i in 0 until 4) {
+                etList.get(i).setOnKeyListener(object : OnKeyListener {
+                    override fun onKey(p0: View?, p1: Int, p2: KeyEvent?): Boolean {
+                        if (p2?.action == KeyEvent.ACTION_DOWN) {
+                            etList.get(i + 1).requestFocus()
+                        }
+                        return false
+                    }
+
+                })
+            }
+
+//            etWordle1.setOnKeyListener(object :OnKeyListener{
+//                override fun onKey(p0: View?, p1: Int, p2: KeyEvent?): Boolean {
+//                    if (p1 == KeyEvent.KEYCODE_A){
+//                        etWordle2.requestFocus()
+//                    }
+//                    return false
+//                }
+//
+//            })
+
+            etWordle5.setOnKeyListener(object : OnKeyListener {
+                override fun onKey(p0: View?, p1: Int, p2: KeyEvent?): Boolean {
+                    Log.d("테스트1", p1.toString())
+                    Log.d("테스트2", p1.toString())
+                    // 66은 엔터
+                    if (p1 == 66 && p2?.action == KeyEvent.ACTION_UP) {
+                        Log.d("테스트3", "엔터 눌러짐")
+//                        checkAnswer(answer, etList)
+//                        disableEditText(etList)
+
+                        // 정답 여부에 따라 색깔을 변환하는 코드
+
+
+                    }
+
+                    return false
+                }
+
+            })
+
+        }
+    }
+
+    fun enableEditText(etList: ArrayList<EditText>) {
+        for (i in 0 until etList.size) {
+            etList.get(i).isEnabled = true
+        }
+    }
+
+    fun disableEditText(etList: ArrayList<EditText>) {
+        for (i in 0 until etList.size) {
+            etList.get(i).isEnabled = false
+        }
+    }
+
+    fun checkAnswer(answer: String, etList: ArrayList<EditText>) {
+        // a  p  p  l  e -> 정답
+        // a  l  b  u  m -> 입력
+        // 초 노 회 회 회
+        for (i in 0 until etList.size) {
+            val answerChar: Char = answer.get(i)
+            val etChar: Char = etList.get(i).text.toString().single()
+
+            if (answerChar == etChar) {
+                etList.get(i).setBackgroundColor(Color.parseColor("green"))
+            } else {
+                var check = true
+
+                for (j in 0 until etList.size) {
+                    if (etChar == answer.get(j)) {
+                        etList.get(i).setBackgroundColor(Color.parseColor("yellow"))
+                        check = false
+                    }
+                }
+
+                if (check == true) {
+                    etList.get(i).setBackgroundColor(Color.parseColor("gray"))
+                }
+
+            }
+
+
+        }
+    }
+
+    // 7. 오버라이딩 된 3개의 메소드 구현
+    // 9. onCreateViewHolder() -> layoutInflator 를 통해 xml -> view 로 변환
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val layoutInflater = LayoutInflater.from(context)
+        val view = layoutInflater.inflate(R.layout.wordle_list, null)
+
+        return ViewHolder(view)
+    }
+
+    // 11. wordleList.get(position).word1 등을 통해 값을 꺼내서 setText
+    // 10. onBindViewHolder() -> 만들어진 holder 안에 etWordle1 ~ etWordle5를
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        val etList = ArrayList<EditText>()
+        etList.add(holder.etWordle1)
+        etList.add(holder.etWordle2)
+        etList.add(holder.etWordle3)
+        etList.add(holder.etWordle4)
+        etList.add(holder.etWordle5)
+
+        holder.etWordle1.setText(wordleList.get(position).word1)
+        holder.etWordle2.setText(wordleList.get(position).word2)
+        holder.etWordle3.setText(wordleList.get(position).word3)
+        holder.etWordle4.setText(wordleList.get(position).word4)
+        holder.etWordle5.setText(wordleList.get(position).word5)
+
+        if (position == 0) {
+            enableEditText(etList)
+        } else {
+            disableEditText(etList)
+        }
+
+        holder.etWordle5.setOnKeyListener(object : OnKeyListener {
+            override fun onKey(p0: View?, p1: Int, p2: KeyEvent?): Boolean {
+                if(p1 == KeyEvent.KEYCODE_ENTER && p2?.action == KeyEvent.ACTION_UP){
+                    if(position==wordleList.size -1){
+                        Toast.makeText(context, answer, Toast.LENGTH_SHORT).show()
+                    }else{
+                        checkAnswer(answer, etList)
+                    }
+                        disableEditText(etList)
+
+                }
+                return false
+            }
+
+        })
+    }
+
+    // 8. getItemCount -> wordleList 의 크기를 리턴
+    override fun getItemCount(): Int {
+        return wordleList.size
+    }
+
+
+}
+```
+gradle-module
+![image](https://user-images.githubusercontent.com/112377313/206650566-f0c01ea4-d9f6-4117-99f3-927cfd476316.png)
+![image](https://user-images.githubusercontent.com/112377313/206650714-36202a32-7035-418f-b7ae-498914d39bea.png)
+![image](https://user-images.githubusercontent.com/112377313/206652380-e452e220-1e4e-4961-a8a7-e66142d9d30d.png)
+
+
+</details>
+
+<details>
         <summary> 코드 토글 Code</summary>
     
 ```
